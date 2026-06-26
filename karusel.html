@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background: #111; }
+
+.slide {
+  width: 1080px;
+  height: 1350px;
+  background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 90px;
+  page-break-after: always;
+}
+
+/* shared */
+.green { color: #B8F024; }
+.tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 40px;
+}
+.pg {
+  position: absolute;
+  bottom: 60px;
+  right: 90px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: 0.1em;
+}
+
+/* ── SLIDE 1 ── */
+.s1 { justify-content: flex-end; padding-bottom: 120px; }
+.s1 .top-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: #B8F024;
+}
+.s1 .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 36px;
+}
+.s1 h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 104px;
+  font-weight: 700;
+  line-height: 0.95;
+  color: #B8F024;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.s1 .sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #888;
+  line-height: 1.5;
+  max-width: 700px;
+}
+.s1 .sub strong {
+  color: #ccc;
+  font-weight: 600;
+}
+.s1 .swipe {
+  position: absolute;
+  bottom: 60px;
+  left: 90px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #444;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── SLIDE 2 ── */
+.s2 { justify-content: center; }
+.s2 .left-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: #B8F024;
+}
+.s2 blockquote {
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.s2 .line {
+  width: 56px;
+  height: 4px;
+  background: #B8F024;
+  margin-bottom: 50px;
+}
+.s2 p {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #777;
+  max-width: 800px;
+}
+.s2 p strong { color: #f0f0f0; font-weight: 600; }
+
+/* ── SLIDES 3 & 4 ── */
+.s3, .s4 { justify-content: flex-start; padding-top: 100px; }
+.s3 .section-tag, .s4 .section-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #B8F024;
+  margin-bottom: 64px;
+}
+.reason {
+  margin-bottom: 60px;
+}
+.reason h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.reason h3 .x {
+  color: #ff4444;
+  font-size: 32px;
+}
+.reason p {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666;
+  padding-left: 4px;
+  max-width: 860px;
+}
+.reason p strong { color: #B8F024; font-weight: 600; }
+.h-rule {
+  width: 100%;
+  height: 1px;
+  background: #1e1e1e;
+  margin-bottom: 60px;
+}
+
+/* ── SLIDE 5 ── */
+.s5 { background: #B8F024; }
+.s5 .tag5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #5a7000;
+  margin-bottom: 56px;
+}
+.s5 h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.0;
+  color: #0d0d0d;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.s5 .line5 {
+  width: 56px;
+  height: 4px;
+  background: #0d0d0d;
+  margin-bottom: 48px;
+}
+.s5 p {
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #2a3a00;
+  max-width: 840px;
+}
+.s5 p strong { color: #0d0d0d; font-weight: 700; }
+.s5 .pg5 {
+  position: absolute;
+  bottom: 60px;
+  right: 90px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #5a7000;
+  letter-spacing: 0.1em;
+}
+
+/* ── SLIDE 6 ── */
+.s6 { justify-content: space-between; padding-top: 100px; padding-bottom: 100px; }
+.s6 .bottom-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 5px;
+  background: #B8F024;
+}
+.s6 h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 74px;
+  font-weight: 700;
+  line-height: 1.0;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.s6 p {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666;
+  max-width: 760px;
+}
+.s6 .cta {
+  background: #B8F024;
+  padding: 48px 60px;
+  display: inline-block;
+}
+.s6 .cta .cta-small {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #5a7000;
+  display: block;
+  margin-bottom: 12px;
+}
+.s6 .cta .cta-big {
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #0d0d0d;
+  text-transform: uppercase;
+  line-height: 1;
+}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide s1" data-document-role="page" data-label="Cover">
+  <div class="top-line"></div>
+  <div class="eyebrow">Ishrana &amp; Mršavljenje</div>
+  <h1>Zašto<br>ne<br>mršaviš?</h1>
+  <p class="sub">Iako paziš šta jedeš — <strong>4 razloga koja niko ne pominje.</strong></p>
+  <div class="swipe">Swipe →</div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide s2" data-document-role="page" data-label="Uvod">
+  <div class="left-bar"></div>
+  <blockquote>Jedeš zdravo.<br>Izbjegavaš slatkiše.<br>Ponekad i gladuješ.</blockquote>
+  <div class="line"></div>
+  <p>A vaga se ne pomjera.<br><br>Problem nije tvoja volja — problem je u tome <strong>šta se dešava iznutra.</strong></p>
+  <div class="pg">02 / 06</div>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide s3" data-document-role="page" data-label="Razlog 1 i 2">
+  <div class="section-tag">Razlozi 01 &amp; 02</div>
+  <div class="reason">
+    <h3><span class="x">✕</span> Premalo proteina</h3>
+    <p>Bez dovoljno proteina tijelo razgrađuje mišiće, metabolizam usporava. Potrebno je <strong>1.5–2g po kg</strong> tjelesne mase dnevno.</p>
+  </div>
+  <div class="h-rule"></div>
+  <div class="reason">
+    <h3><span class="x">✕</span> Preskačeš obroke</h3>
+    <p>Tijelo ne troši zalihe — ono <strong>usporava sagorijevanje.</strong> Jedeš manje, a metabolizam postaje sve sporiji.</p>
+  </div>
+  <div class="pg">03 / 06</div>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide s4" data-document-role="page" data-label="Razlog 3 i 4">
+  <div class="section-tag">Razlozi 03 &amp; 04</div>
+  <div class="reason">
+    <h3><span class="x">✕</span> Nisi u deficitu koliko misliš</h3>
+    <p>Orasi, sir, ulje — zdravo, ali kalorijski gusto. Lako je pojesti <strong>500 kalorija više</strong> nego što misliš.</p>
+  </div>
+  <div class="h-rule"></div>
+  <div class="reason">
+    <h3><span class="x">✕</span> Stres i loš san sabotiraju sve</h3>
+    <p>Kortizol direktno utiče na taloženje masti. Manje od <strong>7 sati sna</strong> povećava apetit i usporava napredak.</p>
+  </div>
+  <div class="pg">04 / 06</div>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide s5" data-document-role="page" data-label="Rješenje">
+  <div class="tag5">Dobra vijest</div>
+  <h2>Sva 4<br>problema<br>imaju<br>rješenje.</h2>
+  <div class="line5"></div>
+  <p>Nije potrebna ekstremna dijeta. Potreban je plan prilagođen <strong>tebi</strong> — tvojim navikama, tvom tijelu, tvom rasporedu.</p>
+  <div class="pg5">05 / 06</div>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide s6" data-document-role="page" data-label="CTA">
+  <div>
+    <div class="tag">Sljedeći korak</div>
+    <h2>Prepoznaješ<br>se?</h2>
+    <p>Radim besplatne procjene i pomažem da napraviš plan koji zaista funkcioniše. Bez obaveza.</p>
+  </div>
+  <div class="cta">
+    <span class="cta-small">Napiši mi u DM</span>
+    <span class="cta-big">"PROCJENA" →</span>
+  </div>
+  <div class="bottom-line"></div>
+</div>
+
+</body>
+</html>
