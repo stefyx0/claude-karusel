@@ -1,331 +1,212 @@
 <!DOCTYPE html>
-<html lang="bs">
+<html lang="sr">
 <head>
 <meta charset="UTF-8">
+<title>Karusel - 5 grešaka pri mršavljenju</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #111; }
-
-.slide {
-  width: 1080px;
-  height: 1350px;
-  background: #0d0d0d;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 90px 85px;
-  page-break-after: always;
-}
-
-.pg {
-  position: absolute;
-  bottom: 65px;
-  right: 85px;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  color: #444;
-  letter-spacing: 0.1em;
-}
-
-/* ── SLIDE 1 ── */
-.s1 { justify-content: flex-end; padding-bottom: 130px; }
-.s1 .top-line {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 6px;
-  background: #B8F024;
-}
-.s1 .eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 40px;
-}
-.s1 h1 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 118px;
-  font-weight: 700;
-  line-height: 0.92;
-  color: #B8F024;
-  text-transform: uppercase;
-  margin-bottom: 44px;
-}
-.s1 .sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: #888;
-  line-height: 1.5;
-  max-width: 750px;
-}
-.s1 .sub strong { color: #ccc; font-weight: 600; }
-.s1 .swipe {
-  position: absolute;
-  bottom: 65px;
-  left: 85px;
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  color: #444;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-/* ── SLIDE 2 ── */
-.s2 { justify-content: center; }
-.s2 .left-bar {
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 6px;
-  background: #B8F024;
-}
-.s2 blockquote {
-  font-family: 'Oswald', sans-serif;
-  font-size: 62px;
-  font-weight: 600;
-  line-height: 1.15;
-  color: #f0f0f0;
-  text-transform: uppercase;
-  margin-bottom: 56px;
-}
-.s2 .line {
-  width: 64px;
-  height: 5px;
-  background: #B8F024;
-  margin-bottom: 56px;
-}
-.s2 p {
-  font-family: 'Inter', sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 1.65;
-  color: #777;
-  max-width: 850px;
-}
-.s2 p strong { color: #f0f0f0; font-weight: 600; }
-
-/* ── SLIDES 3 & 4 ── */
-.s3, .s4 { justify-content: flex-start; padding-top: 95px; }
-.s3 .section-tag, .s4 .section-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #B8F024;
-  margin-bottom: 60px;
-}
-.reason { margin-bottom: 56px; }
-.reason h3 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 46px;
-  font-weight: 700;
-  color: #f0f0f0;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.reason h3 .x { color: #ff4444; font-size: 40px; }
-.reason p {
-  font-family: 'Inter', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #666;
-  padding-left: 6px;
-  max-width: 900px;
-}
-.reason p strong { color: #B8F024; font-weight: 600; }
-.h-rule {
-  width: 100%;
-  height: 1px;
-  background: #1e1e1e;
-  margin-bottom: 56px;
-}
-
-/* ── SLIDE 5 ── */
-.s5 { background: #B8F024; }
-.s5 .tag5 {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #5a7000;
-  margin-bottom: 52px;
-}
-.s5 h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 84px;
-  font-weight: 700;
-  line-height: 1.0;
-  color: #0d0d0d;
-  text-transform: uppercase;
-  margin-bottom: 48px;
-}
-.s5 .line5 {
-  width: 64px;
-  height: 5px;
-  background: #0d0d0d;
-  margin-bottom: 48px;
-}
-.s5 p {
-  font-family: 'Inter', sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 1.55;
-  color: #2a3a00;
-  max-width: 880px;
-}
-.s5 p strong { color: #0d0d0d; font-weight: 700; }
-.s5 .pg5 {
-  position: absolute;
-  bottom: 65px;
-  right: 85px;
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  color: #5a7000;
-  letter-spacing: 0.1em;
-}
-
-/* ── SLIDE 6 ── */
-.s6 { justify-content: space-between; padding-top: 95px; padding-bottom: 95px; }
-.s6 .bottom-line {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 6px;
-  background: #B8F024;
-}
-.s6 .tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 40px;
-}
-.s6 h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 86px;
-  font-weight: 700;
-  line-height: 1.0;
-  color: #f0f0f0;
-  text-transform: uppercase;
-  margin-bottom: 36px;
-}
-.s6 p {
-  font-family: 'Inter', sans-serif;
-  font-size: 26px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #666;
-  max-width: 800px;
-}
-.s6 .cta {
-  background: #B8F024;
-  padding: 50px 64px;
-  display: inline-block;
-}
-.s6 .cta .cta-small {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #5a7000;
-  display: block;
-  margin-bottom: 14px;
-}
-.s6 .cta .cta-big {
-  font-family: 'Oswald', sans-serif;
-  font-size: 62px;
-  font-weight: 700;
-  color: #0d0d0d;
-  text-transform: uppercase;
-  line-height: 1;
-}
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#1a1a1a; }
+  .slide {
+    width:1080px;
+    height:1350px;
+    background:#0d0d0d;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:100px 90px;
+    margin-bottom:40px;
+    font-family:'Inter', sans-serif;
+    color:#ffffff;
+    overflow:hidden;
+  }
+  .line-top, .line-bottom {
+    position:absolute;
+    left:90px;
+    right:90px;
+    height:4px;
+    background:#B8F024;
+  }
+  .line-top { top:70px; }
+  .line-bottom { bottom:70px; }
+  .page-num {
+    position:absolute;
+    bottom:80px;
+    right:90px;
+    font-family:'Inter', sans-serif;
+    font-size:28px;
+    font-weight:500;
+    color:#B8F024;
+  }
+  .eyebrow {
+    font-family:'Inter', sans-serif;
+    font-size:32px;
+    font-weight:600;
+    color:#B8F024;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:30px;
+  }
+  h1 {
+    font-family:'Oswald', sans-serif;
+    font-size:78px;
+    font-weight:700;
+    line-height:1.15;
+    color:#ffffff;
+    margin-bottom:40px;
+  }
+  h2 {
+    font-family:'Oswald', sans-serif;
+    font-size:66px;
+    font-weight:600;
+    line-height:1.2;
+    color:#B8F024;
+    margin-bottom:45px;
+  }
+  p {
+    font-family:'Inter', sans-serif;
+    font-size:42px;
+    font-weight:400;
+    line-height:1.5;
+    color:#e8e8e8;
+    margin-bottom:28px;
+  }
+  .subtitle {
+    font-family:'Inter', sans-serif;
+    font-size:44px;
+    font-weight:500;
+    line-height:1.5;
+    color:#B8F024;
+    margin-top:20px;
+  }
+  .bold-line {
+    font-weight:600;
+    color:#ffffff;
+  }
+  .list-item {
+    font-family:'Inter', sans-serif;
+    font-size:44px;
+    font-weight:500;
+    color:#ffffff;
+    margin-bottom:22px;
+    display:flex;
+    align-items:center;
+  }
+  .x-mark {
+    color:#ff4444;
+    font-size:44px;
+    font-weight:700;
+    margin-right:24px;
+  }
+  .closing {
+    font-family:'Inter', sans-serif;
+    font-size:44px;
+    font-weight:600;
+    color:#B8F024;
+    line-height:1.5;
+    margin-top:20px;
+  }
+  .cta-box {
+    background:#161616;
+    border:3px solid #B8F024;
+    border-radius:20px;
+    padding:50px;
+    margin-top:40px;
+  }
+  .cta-text {
+    font-family:'Inter', sans-serif;
+    font-size:44px;
+    font-weight:700;
+    color:#B8F024;
+    line-height:1.4;
+  }
+  .engage-box {
+    margin-top:50px;
+    padding-top:40px;
+    border-top:2px solid #333;
+  }
+  .engage-text {
+    font-family:'Inter', sans-serif;
+    font-size:38px;
+    font-weight:500;
+    color:#cccccc;
+    line-height:1.5;
+  }
 </style>
 </head>
 <body>
 
-<!-- SLIDE 1 -->
-<div class="slide s1" data-document-role="page" data-label="Cover">
-  <div class="top-line"></div>
-  <div class="eyebrow">Ishrana &amp; Mršavljenje</div>
-  <h1>Zašto<br>ne<br>mršaviš?</h1>
-  <p class="sub">Iako paziš šta jedeš — <strong>4 razloga koja niko ne pominje.</strong></p>
-  <div class="swipe">Swipe →</div>
+<!-- SLAJD 1 - NASLOV -->
+<div class="slide">
+  <div class="line-top"></div>
+  <div class="eyebrow">Zdravlje i ishrana</div>
+  <h1>Zašto 90% ljudi odustane od mršavljenja?</h1>
+  <p class="subtitle">👉 Nije zato što su lijeni. Najčešće prave ovih 5 grešaka.</p>
+  <div class="line-bottom"></div>
+  <div class="page-num">1/6</div>
 </div>
 
-<!-- SLIDE 2 -->
-<div class="slide s2" data-document-role="page" data-label="Uvod">
-  <div class="left-bar"></div>
-  <blockquote>Jedeš zdravo.<br>Izbjegavaš slatkiše.<br>Ponekad i gladuješ.</blockquote>
-  <div class="line"></div>
-  <p>A vaga se ne pomjera.<br><br>Problem nije tvoja volja — problem je u tome <strong>šta se dešava iznutra.</strong></p>
-  <div class="pg">02 / 06</div>
+<!-- SLAJD 2 - GREŠKA 1 -->
+<div class="slide">
+  <div class="line-top"></div>
+  <h2>1. Očekuju rezultate preko noći</h2>
+  <p>Poslije nekoliko dana stanu na vagu i ne vide veliku promjenu.</p>
+  <p class="bold-line">Pomisle: "Ovo ne djeluje."</p>
+  <p class="closing">Istina je da se pravo mršavljenje gradi sedmicama i mjesecima, a ne za nekoliko dana.</p>
+  <div class="line-bottom"></div>
+  <div class="page-num">2/6</div>
 </div>
 
-<!-- SLIDE 3 -->
-<div class="slide s3" data-document-role="page" data-label="Razlog 1 i 2">
-  <div class="section-tag">Razlozi 01 &amp; 02</div>
-  <div class="reason">
-    <h3><span class="x">✕</span> Premalo proteina</h3>
-    <p>Bez dovoljno proteina tijelo razgrađuje mišiće, metabolizam usporava. Potrebno je <strong>1.5–2g po kg</strong> tjelesne mase dnevno.</p>
-  </div>
-  <div class="h-rule"></div>
-  <div class="reason">
-    <h3><span class="x">✕</span> Preskačeš obroke</h3>
-    <p>Tijelo ne troši zalihe — ono <strong>usporava sagorijevanje.</strong> Jedeš manje, a metabolizam postaje sve sporiji.</p>
-  </div>
-  <div class="pg">03 / 06</div>
+<!-- SLAJD 3 - GREŠKA 2 -->
+<div class="slide">
+  <div class="line-top"></div>
+  <h2>2. Izaberu dijetu koju ne mogu pratiti</h2>
+  <div class="list-item"><span class="x-mark">✕</span> Izbace hljeb.</div>
+  <div class="list-item"><span class="x-mark">✕</span> Izbace slatkiše.</div>
+  <div class="list-item"><span class="x-mark">✕</span> Jedu samo salatu.</div>
+  <p style="margin-top:20px;">Poslije nekoliko dana sve im dosadi i vrate se starim navikama.</p>
+  <p class="closing">Najbolji plan nije najstroži, nego onaj kojeg možeš pratiti dugoročno.</p>
+  <div class="line-bottom"></div>
+  <div class="page-num">3/6</div>
 </div>
 
-<!-- SLIDE 4 -->
-<div class="slide s4" data-document-role="page" data-label="Razlog 3 i 4">
-  <div class="section-tag">Razlozi 03 &amp; 04</div>
-  <div class="reason">
-    <h3><span class="x">✕</span> Nisi u deficitu koliko misliš</h3>
-    <p>Orasi, sir, ulje — zdravo, ali kalorijski gusto. Lako je pojesti <strong>500 kalorija više</strong> nego što misliš.</p>
-  </div>
-  <div class="h-rule"></div>
-  <div class="reason">
-    <h3><span class="x">✕</span> Stres i loš san sabotiraju sve</h3>
-    <p>Kortizol direktno utiče na taloženje masti. Manje od <strong>7 sati sna</strong> povećava apetit i usporava napredak.</p>
-  </div>
-  <div class="pg">04 / 06</div>
+<!-- SLAJD 4 - GREŠKA 3 -->
+<div class="slide">
+  <div class="line-top"></div>
+  <h2>3. Pokušavaju sve sami</h2>
+  <p>Kada naiđu na prvu prepreku, nemaju kome postaviti pitanje niti ko će ih motivisati da nastave.</p>
+  <p class="closing">Podrška i odgovornost često naprave veću razliku od samog plana ishrane.</p>
+  <div class="line-bottom"></div>
+  <div class="page-num">4/6</div>
 </div>
 
-<!-- SLIDE 5 -->
-<div class="slide s5" data-document-role="page" data-label="Rješenje">
-  <div class="tag5">Dobra vijest</div>
-  <h2>Sva 4<br>problema<br>imaju<br>rješenje.</h2>
-  <div class="line5"></div>
-  <p>Nije potrebna ekstremna dijeta. Potreban je plan prilagođen <strong>tebi</strong> — tvojim navikama, tvom tijelu, tvom rasporedu.</p>
-  <div class="pg5">05 / 06</div>
+<!-- SLAJD 5 - GREŠKA 4 -->
+<div class="slide">
+  <div class="line-top"></div>
+  <h2>4. Jedna greška im uništi motivaciju</h2>
+  <div class="list-item"><span class="x-mark">✕</span> Pojeli su pizzu.</div>
+  <div class="list-item"><span class="x-mark">✕</span> Preskočili su trening.</div>
+  <p class="bold-line" style="margin-top:15px;">Odmah pomisle: "Upropastio sam sve."</p>
+  <p style="margin-top:25px;">Neuspjeh nije jedan loš obrok.</p>
+  <p class="closing">Neuspjeh je odustati zbog jednog lošeg obroka.</p>
+  <div class="line-bottom"></div>
+  <div class="page-num">5/6</div>
 </div>
 
-<!-- SLIDE 6 -->
-<div class="slide s6" data-document-role="page" data-label="CTA">
-  <div>
-    <div class="tag">Sljedeći korak</div>
-    <h2>Prepoznaješ<br>se?</h2>
-    <p>Radim besplatne procjene i pomažem da napraviš plan koji zaista funkcioniše. Bez obaveza.</p>
+<!-- SLAJD 6 - CTA -->
+<div class="slide">
+  <div class="line-top"></div>
+  <h2 style="font-size:58px;">Spreman/na da promijeniš pristup?</h2>
+  <p style="font-size:40px;">Ako želiš da smršaš uz plan koji možeš pratiti i podršku tokom cijelog procesa...</p>
+  <div class="cta-box">
+    <p class="cta-text">📩 Pošalji mi poruku "START" i objasniću ti kako funkcioniše program.</p>
   </div>
-  <div class="cta">
-    <span class="cta-small">Napiši mi u DM</span>
-    <span class="cta-big">"PROCJENA" →</span>
+  <div class="engage-box">
+    <p class="engage-text">Koja od ove 4 greške tebi pravi najveći problem?<br>Napiši broj (1, 2, 3 ili 4) u komentaru. 👇</p>
   </div>
-  <div class="bottom-line"></div>
+  <div class="line-bottom"></div>
+  <div class="page-num">6/6</div>
 </div>
 
 </body>
